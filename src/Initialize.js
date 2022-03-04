@@ -1,11 +1,16 @@
-export default class Initialize{
+export default class Initialize {
 
+  constructor() {
 
-    constructor(){
+    console.log("Initialize ready");
 
-       console.log("Initialize ready");
+    this.ninja = document.createElement("div");
+    this.ninja.id = "ninja";
+    document.body.appendChild(this.ninja);
 
-    }// END constructor
+    let ninjaImg = document.createElement("img");
+    ninjaImg.src = "./assets/ninja.png";
+    this.ninja.appendChild(ninjaImg);
 
-  
-}
+  } // END constructor
+} // END class
