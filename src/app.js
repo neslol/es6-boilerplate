@@ -5,8 +5,8 @@ import "../css/style.scss";
 
 (function () {
 
-  console.log("starting the app now");
+  console.log("starting the app");
 
   let init = new Initialize();
-  
+
 })();

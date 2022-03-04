@@ -12,5 +12,7 @@ export default class Initialize {
     ninjaImg.src = "./assets/ninja.png";
     this.ninja.appendChild(ninjaImg);
 
+
+
   } // END constructor
 } // END class
