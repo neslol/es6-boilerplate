@@ -1,12 +1,29 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+//const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 //const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const webpack = require('webpack');
 const CopyPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
 
 module.exports = {
     mode: 'production',
     watch: true,
+
+
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true
+            }
+          }
+        })
+      ]
+    },
 
 
     plugins: [
@@ -15,25 +32,6 @@ module.exports = {
             PIXI: 'pixi.js'
           }),
         
-    
-        new UglifyJsPlugin({
-
-            uglifyOptions: {
-
-                compress: {
-                    drop_console: true
-                },
-                
-                output: {
-                    comments: false,
-                    beautify: false
-
-                }
-
-            }
-
-
-        }),
 
         new CopyPlugin({
             patterns: [
