@@ -1,18 +1,13 @@
 export default class Initialize {
-
   constructor() {
+    console.log("alt ok");
 
-    console.log("Initialize ready");
-
-    this.ninja = document.createElement("div");
-    this.ninja.id = "ninja";
-    document.body.appendChild(this.ninja);
-
-    let ninjaImg = document.createElement("img");
-    ninjaImg.src = "./assets/ninja.png";
-    this.ninja.appendChild(ninjaImg);
-
-
-
+    this.counter = 0;
+    const myName = "Arseniy";
+    let age = 17;
   } // END constructor
+
+  myFunc() {
+    console.log("jeg er i en function");
+  }
 } // END class
